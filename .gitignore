@@ -2,6 +2,8 @@
 ## Modelsim
 #################
 work/
+*.wlf
+*.mti
 
 #################
 ## Eclipse
