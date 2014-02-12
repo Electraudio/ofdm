@@ -132,11 +132,28 @@ BEGIN
 	
 	serial_process :process
    begin
-		wait for clk_period*30;
+		wait for 500 ns;
 		rxserial <= '1';
 		wait for clk_period*4;
 		rxserial <= '0';
 		wait for clk_period*4;
+		wait for clk_period*218;
+		wait for clk_period*4;
+		rxserial <= '1';
+		wait for clk_period*4;
+		rxserial <= '0';
+		wait for clk_period*4;
+		wait for clk_period*218;
+		wait for clk_period*8;
+		rxserial <= '1';
+		wait for clk_period*4;
+		rxserial <= '0';
+		wait for clk_period*4;
+		wait for clk_period*218;
+		wait for clk_period*12;
+		rxserial <= '1';
+		wait for clk_period*4;
+		rxserial <= '0';
 		wait;
    end process;
  
@@ -144,12 +161,8 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-      -- hold reset state for 100 ns.
 		rsti <= '1';
-	--	rxserial <= '0';
-      wait for 500 ns;
-
-      wait for clk_period*10;
+    wait for 500 ns;
 		rsti <= '0';
 
       -- insert stimulus here
