@@ -13,6 +13,7 @@ entity rxmodem is
             rst : in std_logic;
             mem_ready     : in  std_logic;
             Iin           : in  std_logic_vector(11 downto 0);
+			Qin           : in  std_logic_vector(11 downto 0);
             mem_block     : out std_logic;
             wen           : in  std_logic;
             addrin_in     : in  std_logic_vector(6 downto 0);
@@ -33,13 +34,13 @@ architecture rxmodem of rxmodem is
       rst           : in  std_logic;
       mem_ready     : in  std_logic;
       Iin           : in  std_logic_vector(WIDTH-1 downto 0);
-      --Qin           : in  std_logic_vector(WIDTH-1 downto 0);
+      Qin           : in  std_logic_vector(WIDTH-1 downto 0);
       Iout          : out std_logic_vector(WIDTH+1 downto 0);
       Qout          : out std_logic_vector(WIDTH+1 downto 0);
       mem_block     : out std_logic;
       Output_enable : out std_logic;
-      --bank0_busy    : out std_logic;
-      --bank1_busy    : out std_logic;
+      bank0_busy    : out std_logic;
+      bank1_busy    : out std_logic;
       wen_in        : in  std_logic;
       addrin_in     : in  std_logic_vector(2*stage-Tx_nRX downto 0);
       addrout_out   : in  std_logic_vector(2*stage-1 downto 0));
@@ -73,7 +74,7 @@ begin
          rst           => rst,
          mem_ready     => mem_ready,
          Iin           => Iin,
-         --Qin           => (others => '0'),
+         Qin           => Qin,
          Iout          => Iout,  --tratado
          Qout          => Qout,  --tratado
          mem_block     => mem_block,

@@ -41,6 +41,7 @@ architecture modem of modem is
       rst           : in  std_logic;
       serial        : in  std_logic;
       Iout          : out std_logic_vector(13 downto 0);
+	  Qout          : out std_logic_vector(13 downto 0);
       Output_enable : out std_logic;
       addrout_out   : in  std_logic_vector(5 downto 0)
       );
@@ -65,6 +66,7 @@ architecture modem of modem is
       rst : in std_logic;
       mem_ready     : in  std_logic;
       Iin           : in  std_logic_vector(11 downto 0);
+	  Qin           : in  std_logic_vector(11 downto 0);
       mem_block     : out std_logic;
       wen           : in  std_logic;
       addrin_in     : in  std_logic_vector(6 downto 0);
@@ -72,14 +74,10 @@ architecture modem of modem is
       );
   end component;
 
-   component BUFGP
-         port (I: in std_logic; O: out std_logic);
-   end component;
-   signal rst:  std_logic;
-
-
+  signal rst           : std_logic;
   signal mem_ready     : std_logic;
   signal Iin           : std_logic_vector(13 downto 0);
+  signal Qin           : std_logic_vector(13 downto 0);
   signal mem_block     : std_logic;
   signal Output_enable : std_logic;
   signal wen           : std_logic;
@@ -87,7 +85,9 @@ architecture modem of modem is
   signal address_write : std_logic_vector(6 downto 0);
   
 begin
-   U1:  BUFGP port map (I => rsti, O => rst);
+  rst <= rsti;
+  Iout_rx <= Iin;
+  Qout_rx <= Qin;
 
 
   txmodem_1 : txmodem
@@ -96,6 +96,7 @@ begin
       rst           => rst,
       serial        => rxserial,
       Iout          => Iin,
+	  Qout          => Qin,
       Output_enable => Output_enable,
       addrout_out   => address_read
       );
@@ -117,6 +118,7 @@ begin
       rst           => rst,
       mem_ready     => mem_ready,
       Iin           => Iin(13 downto 2),
+	  Qin           => Qin(13 downto 2),
       mem_block     => mem_block,
       wen           => wen,
       addrin_in     => address_write,

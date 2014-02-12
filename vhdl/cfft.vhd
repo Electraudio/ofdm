@@ -272,11 +272,11 @@ TX:if Tx_nRx = 1 generate
         wen     => wen_out,
         addrin  => addrin_out,
         dinR    => cfft4outR,
-        dinI    => cfft4outR,
+        dinI    => cfft4outI,
         clkout  => ClkIn,
         addrout => addrout_out,
         doutR   => Iout,
-        doutI   => open);
+        doutI   => Qout);
 end generate;
 
 RX:if Tx_nRx = 0 generate
@@ -294,9 +294,9 @@ RX:if Tx_nRx = 0 generate
         clkout  => ClkIn,
         addrout => addrout_in,
         doutR   => MuxInRa,
-        doutI   => open);
+        doutI   => MuxInIa);
 
-        MuxinIa <= (others => '0');
+      --  MuxinIa <= (others => '0');
 
 	 RamOut : ram
       generic map (
@@ -308,7 +308,7 @@ RX:if Tx_nRx = 0 generate
         wen     => wen_out,
         addrin  => addrin_out,
         dinR    => cfft4outR,
-        dinI    => cfft4outR,
+        dinI    => cfft4outI,
         clkout  => ClkIn,
         addrout => addrout_out,
         doutR   => Iout,

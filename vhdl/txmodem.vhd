@@ -13,6 +13,7 @@ entity txmodem is
          rst           : in  std_logic;
          serial        : in  std_logic;
          Iout          : out std_logic_vector(13 downto 0);
+		 Qout          : out std_logic_vector(13 downto 0);
          Output_enable : out std_logic;
          addrout_out   : in  std_logic_vector(5 downto 0)
          );
@@ -92,7 +93,7 @@ begin
       Iin           => I,
       Qin           => Q,
       Iout          => Iout,
-      Qout          => open,
+      Qout          => Qout,
       mem_block     => mem_block,
       Output_enable => Output_enable,
       bank0_busy    => open,
