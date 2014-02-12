@@ -42,7 +42,7 @@ begin
 	   if unsigned(cont) /= 32 then
 	      cont <= cont+1;
       else 
-		   cont <= x'1';
+		   cont <= x"1";
 		end if;
 	end if;
 end process;
