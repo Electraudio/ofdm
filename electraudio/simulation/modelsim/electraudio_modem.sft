@@ -1,0 +1,5 @@
+set tool_name "ModelSim-Altera (VHDL)"
+set corner_file_list {
+	{{"Slow Model"} {electraudio_modem.vho electraudio_modem_vhd.sdo}}
+	{{"Fast Model"} {electraudio_modem_fast.vho electraudio_modem_vhd_fast.sdo}}
+}
