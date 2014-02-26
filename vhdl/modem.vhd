@@ -8,32 +8,23 @@ use IEEE.STD_LOGIC_UNSIGNED.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity modem is
+entity electraudio_modem is
   port ( clk            : in  std_logic;
          rsti            : in  std_logic;
          rxserial       : in  std_logic;
          txserial       : out std_logic;
          pmem_ready     : out std_logic;
-         pIin           : out std_logic_vector(13 downto 0);
          pmem_block     : out std_logic;
          pOutput_enable : out std_logic;
          pwen           : out std_logic;
          paddress_read  : out std_logic_vector(5 downto 0);
          paddress_write : out std_logic_vector(6 downto 0);
          Iout_rx          : out std_logic_vector(13 downto 0);
-         Qout_rx          : out std_logic_vector(13 downto 0);
-         Output_enable_rx : out std_logic;
-         addrout_out_rx   : out std_logic_vector(5 downto 0);
-         mem_block_tx : out std_logic;
-         mem_ready_tx : out std_logic;
-         wen_tx       : out std_logic;
-         address_tx   : out std_logic_vector (5 downto 0);
-         i_tx         : out std_logic_vector(11 downto 0);
-         q_tx         : out std_logic_vector(11 downto 0)
+         Qout_rx          : out std_logic_vector(13 downto 0)
          );
-end modem;
+end electraudio_modem;
 
-architecture modem of modem is
+architecture modem of electraudio_modem is
 
   component txmodem
     port (
@@ -88,6 +79,12 @@ begin
   rst <= rsti;
   Iout_rx <= Iin;
   Qout_rx <= Qin;
+  pmem_ready <= mem_ready;
+  pmem_block <= mem_block;
+  poutput_enable <= Output_enable;
+  pwen <= wen;
+  paddress_read <= address_read;
+  paddress_write <= address_write;
 
 
   txmodem_1 : txmodem
