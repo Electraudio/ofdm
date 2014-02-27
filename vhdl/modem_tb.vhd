@@ -109,11 +109,11 @@ BEGIN
 		rxserial <= '1';
 		wait for clk_period*4;
 		rxserial <= '0';
-		wait for clk_period*244;
+		wait for clk_period*248;
 		rxserial <= '1';
 		wait for clk_period*4;
 		rxserial <= '0';
-		wait for clk_period*248;
+		wait for clk_period*252;
 		rxserial <= '1';
 		wait for clk_period*4;
 		rxserial <= '0';
