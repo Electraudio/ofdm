@@ -5,9 +5,6 @@ work/
 *.wlf
 *.mti
 
-electraudio/db/
-electraudio/incremental_db/
-
 #################
 ## Eclipse
 #################
