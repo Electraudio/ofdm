@@ -1,6 +1,6 @@
 Flow report for electraudio_modem
-Wed Feb 26 01:45:13 2014
-Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+Thu Feb 27 14:45:43 2014
+Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -38,22 +38,22 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Flow Summary                                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Flow Status                        ; Successful - Wed Feb 26 01:45:13 2014         ;
-; Quartus II 32-bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
+; Flow Status                        ; Successful - Thu Feb 27 14:45:43 2014         ;
+; Quartus II 64-Bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; electraudio_modem                             ;
 ; Top-level Entity Name              ; electraudio_modem                             ;
 ; Family                             ; Cyclone II                                    ;
 ; Device                             ; EP2C70F896C6                                  ;
 ; Timing Models                      ; Final                                         ;
-; Total logic elements               ; 2,839 / 68,416 ( 4 % )                        ;
-;     Total combinational functions  ; 2,338 / 68,416 ( 3 % )                        ;
+; Total logic elements               ; 2,798 / 68,416 ( 4 % )                        ;
+;     Total combinational functions  ; 2,341 / 68,416 ( 3 % )                        ;
 ;     Dedicated logic registers      ; 1,776 / 68,416 ( 3 % )                        ;
 ; Total registers                    ; 1776                                          ;
-; Total pins                         ; 63 / 622 ( 10 % )                             ;
+; Total pins                         ; 80 / 622 ( 13 % )                             ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 9,600 / 1,152,000 ( < 1 % )                   ;
 ; Embedded Multiplier 9-bit elements ; 0 / 300 ( 0 % )                               ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                 ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                                ;
 +------------------------------------+-----------------------------------------------+
 
 
@@ -62,29 +62,38 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/26/2014 01:44:38 ;
+; Start date & time ; 02/27/2014 14:45:08 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; electraudio_modem   ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                           ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 1098577461940.139340787819532         ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                ;
++-------------------------------------+---------------------------------------+---------------+------------------+----------------+
+; Assignment Name                     ; Value                                 ; Default Value ; Entity Name      ; Section Id     ;
++-------------------------------------+---------------------------------------+---------------+------------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 40093583651777.139354110705312        ; --            ; --               ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --               ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --               ; --             ;
+; IP_TOOL_NAME                        ; ALTPLL                                ; --            ; --               ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                  ; --            ; --               ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --               ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --               ; --             ;
+; MISC_FILE                           ; pll.bsf                               ; --            ; --               ; --             ;
+; MISC_FILE                           ; pll_inst.vhd                          ; --            ; --               ; --             ;
+; MISC_FILE                           ; pll.cmp                               ; --            ; --               ; --             ;
+; MISC_FILE                           ; pll.ppf                               ; --            ; --               ; --             ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; DE2_70_ADDA_GPIO ; Top            ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; --               ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; DE2_70_ADDA_GPIO ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --               ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; DE2_70_ADDA_GPIO ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --               ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --               ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --               ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --               ; --             ;
++-------------------------------------+---------------------------------------+---------------+------------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -92,12 +101,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 407 MB              ; 00:00:05                           ;
-; Fitter                    ; 00:00:17     ; 2.4                     ; 609 MB              ; 00:00:29                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 373 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.7                     ; 416 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 343 MB              ; 00:00:02                           ;
-; Total                     ; 00:00:30     ; --                      ; --                  ; 00:00:41                           ;
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 548 MB              ; 00:00:07                           ;
+; Fitter                    ; 00:00:15     ; 1.1                     ; 863 MB              ; 00:00:18                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 457 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 527 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 432 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:30     ; --                      ; --                  ; 00:00:32                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -106,11 +115,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; Mempf-PC         ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; Mempf-PC         ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; Mempf-PC         ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; Mempf-PC         ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; Mempf-PC         ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; Mempftop         ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; Mempftop         ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; Mempftop         ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Mempftop         ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; Mempftop         ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

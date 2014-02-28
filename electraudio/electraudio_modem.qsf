@@ -81,7 +81,6 @@ set_global_assignment -name VHDL_FILE ../vhdl/cfft_control.vhd
 set_global_assignment -name VHDL_FILE ../vhdl/cfft.vhd
 set_global_assignment -name VHDL_FILE ../vhdl/blockdram.vhd
 set_global_assignment -name VHDL_FILE ../vhdl/starts.vhd
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_location_assignment PIN_AD15 -to iCLK_50
 set_location_assignment PIN_H23 -to ADC_CLK_A
 set_location_assignment PIN_G24 -to ADC_CLK_B
@@ -115,8 +114,6 @@ set_location_assignment PIN_C29 -to ADC_DB[1]
 set_location_assignment PIN_C30 -to ADC_DB[0]
 set_location_assignment PIN_N25 -to ADC_OEB_A
 set_location_assignment PIN_N24 -to ADC_OEB_B
-set_location_assignment PIN_T25 -to ADC_OTR_A
-set_location_assignment PIN_T24 -to ADC_OTR_B
 set_location_assignment PIN_AF27 -to DAC_CLK_A
 set_location_assignment PIN_AF28 -to DAC_CLK_B
 set_location_assignment PIN_G27 -to DAC_DA[13]
@@ -150,11 +147,26 @@ set_location_assignment PIN_R23 -to DAC_DB[0]
 set_location_assignment PIN_P30 -to DAC_MODE
 set_location_assignment PIN_L29 -to DAC_WRT_A
 set_location_assignment PIN_R22 -to DAC_WRT_B
-set_location_assignment PIN_AG15 -to OSC_SMA_ADC4
 set_location_assignment PIN_N22 -to POWER_ON
-set_location_assignment PIN_AH14 -to SMA_DAC4
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE2_70_ADDA_GPIO -section_id Top
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE2_70_ADDA_GPIO -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -entity DE2_70_ADDA_GPIO -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE2_70_ADDA_GPIO -section_id Top
 set_global_assignment -name QIP_FILE pll.qip
+set_location_assignment PIN_W27 -to LEDG[0]
+set_location_assignment PIN_W25 -to LEDG[1]
+set_location_assignment PIN_W23 -to LEDG[2]
+set_location_assignment PIN_Y27 -to LEDG[3]
+set_location_assignment PIN_Y24 -to LEDG[4]
+set_location_assignment PIN_Y23 -to LEDG[5]
+set_location_assignment PIN_AA27 -to LEDG[6]
+set_location_assignment PIN_AA24 -to LEDG[7]
+set_location_assignment PIN_AC14 -to LEDG[8]
+set_location_assignment PIN_T29 -to KEY[0]
+set_location_assignment PIN_T28 -to KEY[1]
+set_location_assignment PIN_U30 -to KEY[2]
+set_location_assignment PIN_U29 -to KEY[3]
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name VHDL_FILE ../vhdl/electraudio_modem.vhd
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

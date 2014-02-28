@@ -1,4 +1,155 @@
 |electraudio_modem
+iCLK_50 => pll:P0.inclk0
+KEY[0] => modem:M0.rsti
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => modem:M0.rxserial
+LEDG[0] <= <GND>
+LEDG[1] <= <GND>
+LEDG[2] <= <GND>
+LEDG[3] <= <GND>
+LEDG[4] <= <GND>
+LEDG[5] <= <GND>
+LEDG[6] <= <GND>
+LEDG[7] <= modem:M0.txserial
+LEDG[8] <= <GND>
+ADC_DA[0] => ~NO_FANOUT~
+ADC_DA[1] => ~NO_FANOUT~
+ADC_DA[2] => modem:M0.Iin[0]
+ADC_DA[3] => modem:M0.Iin[1]
+ADC_DA[4] => modem:M0.Iin[2]
+ADC_DA[5] => modem:M0.Iin[3]
+ADC_DA[6] => modem:M0.Iin[4]
+ADC_DA[7] => modem:M0.Iin[5]
+ADC_DA[8] => modem:M0.Iin[6]
+ADC_DA[9] => modem:M0.Iin[7]
+ADC_DA[10] => modem:M0.Iin[8]
+ADC_DA[11] => modem:M0.Iin[9]
+ADC_DA[12] => modem:M0.Iin[10]
+ADC_DA[13] => modem:M0.Iin[11]
+ADC_DB[0] => ~NO_FANOUT~
+ADC_DB[1] => ~NO_FANOUT~
+ADC_DB[2] => modem:M0.Qin[0]
+ADC_DB[3] => modem:M0.Qin[1]
+ADC_DB[4] => modem:M0.Qin[2]
+ADC_DB[5] => modem:M0.Qin[3]
+ADC_DB[6] => modem:M0.Qin[4]
+ADC_DB[7] => modem:M0.Qin[5]
+ADC_DB[8] => modem:M0.Qin[6]
+ADC_DB[9] => modem:M0.Qin[7]
+ADC_DB[10] => modem:M0.Qin[8]
+ADC_DB[11] => modem:M0.Qin[9]
+ADC_DB[12] => modem:M0.Qin[10]
+ADC_DB[13] => modem:M0.Qin[11]
+DAC_DA[0] <= modem:M0.Iout[0]
+DAC_DA[1] <= modem:M0.Iout[1]
+DAC_DA[2] <= modem:M0.Iout[2]
+DAC_DA[3] <= modem:M0.Iout[3]
+DAC_DA[4] <= modem:M0.Iout[4]
+DAC_DA[5] <= modem:M0.Iout[5]
+DAC_DA[6] <= modem:M0.Iout[6]
+DAC_DA[7] <= modem:M0.Iout[7]
+DAC_DA[8] <= modem:M0.Iout[8]
+DAC_DA[9] <= modem:M0.Iout[9]
+DAC_DA[10] <= modem:M0.Iout[10]
+DAC_DA[11] <= modem:M0.Iout[11]
+DAC_DA[12] <= modem:M0.Iout[12]
+DAC_DA[13] <= modem:M0.Iout[13]
+DAC_DB[0] <= modem:M0.Qout[0]
+DAC_DB[1] <= modem:M0.Qout[1]
+DAC_DB[2] <= modem:M0.Qout[2]
+DAC_DB[3] <= modem:M0.Qout[3]
+DAC_DB[4] <= modem:M0.Qout[4]
+DAC_DB[5] <= modem:M0.Qout[5]
+DAC_DB[6] <= modem:M0.Qout[6]
+DAC_DB[7] <= modem:M0.Qout[7]
+DAC_DB[8] <= modem:M0.Qout[8]
+DAC_DB[9] <= modem:M0.Qout[9]
+DAC_DB[10] <= modem:M0.Qout[10]
+DAC_DB[11] <= modem:M0.Qout[11]
+DAC_DB[12] <= modem:M0.Qout[12]
+DAC_DB[13] <= modem:M0.Qout[13]
+ADC_CLK_A <= pll:P0.c2
+ADC_CLK_B <= pll:P0.c2
+DAC_CLK_A <= pll:P0.c1
+DAC_CLK_B <= pll:P0.c1
+ADC_OEB_A <= <GND>
+ADC_OEB_B <= <GND>
+DAC_WRT_A <= pll:P0.c1
+DAC_WRT_B <= pll:P0.c1
+DAC_MODE <= <VCC>
+POWER_ON <= <VCC>
+
+
+|electraudio_modem|pll:P0
+inclk0 => altpll:altpll_component.inclk[0]
+c0 <= altpll:altpll_component.clk[0]
+c1 <= altpll:altpll_component.clk[1]
+c2 <= altpll:altpll_component.clk[2]
+
+
+|electraudio_modem|pll:P0|altpll:altpll_component
+inclk[0] => pll.CLK
+inclk[1] => ~NO_FANOUT~
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => ~NO_FANOUT~
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= clk[1].DB_MAX_OUTPUT_PORT_TYPE
+clk[2] <= clk[2].DB_MAX_OUTPUT_PORT_TYPE
+clk[3] <= <GND>
+clk[4] <= <GND>
+clk[5] <= <GND>
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= <GND>
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= sclkout1.DB_MAX_OUTPUT_PORT_TYPE
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
+
+
+|electraudio_modem|modem:M0
 clk => txmodem:txmodem_1.clk
 clk => txrx:txrx_1.clk
 clk => rxmodem:rxmodem_1.clk
@@ -8,20 +159,6 @@ rsti => rxmodem:rxmodem_1.rst
 rxserial => txmodem:txmodem_1.serial
 txserial <= rxmodem:rxmodem_1.txserial
 pmem_ready <= txrx:txrx_1.mem_ready
-pIin[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-pIin[1] <= pIin[1].DB_MAX_OUTPUT_PORT_TYPE
-pIin[2] <= pIin[2].DB_MAX_OUTPUT_PORT_TYPE
-pIin[3] <= pIin[3].DB_MAX_OUTPUT_PORT_TYPE
-pIin[4] <= pIin[4].DB_MAX_OUTPUT_PORT_TYPE
-pIin[5] <= pIin[5].DB_MAX_OUTPUT_PORT_TYPE
-pIin[6] <= pIin[6].DB_MAX_OUTPUT_PORT_TYPE
-pIin[7] <= pIin[7].DB_MAX_OUTPUT_PORT_TYPE
-pIin[8] <= pIin[8].DB_MAX_OUTPUT_PORT_TYPE
-pIin[9] <= pIin[9].DB_MAX_OUTPUT_PORT_TYPE
-pIin[10] <= pIin[10].DB_MAX_OUTPUT_PORT_TYPE
-pIin[11] <= pIin[11].DB_MAX_OUTPUT_PORT_TYPE
-pIin[12] <= pIin[12].DB_MAX_OUTPUT_PORT_TYPE
-pIin[13] <= pIin[13].DB_MAX_OUTPUT_PORT_TYPE
 pmem_block <= rxmodem:rxmodem_1.mem_block
 pOutput_enable <= txmodem:txmodem_1.Output_enable
 pwen <= txrx:txrx_1.wen
@@ -38,37 +175,61 @@ paddress_write[3] <= txrx:txrx_1.address_write[3]
 paddress_write[4] <= txrx:txrx_1.address_write[4]
 paddress_write[5] <= txrx:txrx_1.address_write[5]
 paddress_write[6] <= txrx:txrx_1.address_write[6]
-Iout_rx[0] <= txmodem:txmodem_1.Iout[0]
-Iout_rx[1] <= txmodem:txmodem_1.Iout[1]
-Iout_rx[2] <= txmodem:txmodem_1.Iout[2]
-Iout_rx[3] <= txmodem:txmodem_1.Iout[3]
-Iout_rx[4] <= txmodem:txmodem_1.Iout[4]
-Iout_rx[5] <= txmodem:txmodem_1.Iout[5]
-Iout_rx[6] <= txmodem:txmodem_1.Iout[6]
-Iout_rx[7] <= txmodem:txmodem_1.Iout[7]
-Iout_rx[8] <= txmodem:txmodem_1.Iout[8]
-Iout_rx[9] <= txmodem:txmodem_1.Iout[9]
-Iout_rx[10] <= txmodem:txmodem_1.Iout[10]
-Iout_rx[11] <= txmodem:txmodem_1.Iout[11]
-Iout_rx[12] <= txmodem:txmodem_1.Iout[12]
-Iout_rx[13] <= txmodem:txmodem_1.Iout[13]
-Qout_rx[0] <= txmodem:txmodem_1.Qout[0]
-Qout_rx[1] <= txmodem:txmodem_1.Qout[1]
-Qout_rx[2] <= txmodem:txmodem_1.Qout[2]
-Qout_rx[3] <= txmodem:txmodem_1.Qout[3]
-Qout_rx[4] <= txmodem:txmodem_1.Qout[4]
-Qout_rx[5] <= txmodem:txmodem_1.Qout[5]
-Qout_rx[6] <= txmodem:txmodem_1.Qout[6]
-Qout_rx[7] <= txmodem:txmodem_1.Qout[7]
-Qout_rx[8] <= txmodem:txmodem_1.Qout[8]
-Qout_rx[9] <= txmodem:txmodem_1.Qout[9]
-Qout_rx[10] <= txmodem:txmodem_1.Qout[10]
-Qout_rx[11] <= txmodem:txmodem_1.Qout[11]
-Qout_rx[12] <= txmodem:txmodem_1.Qout[12]
-Qout_rx[13] <= txmodem:txmodem_1.Qout[13]
+Iout[0] <= txmodem:txmodem_1.Iout[0]
+Iout[1] <= txmodem:txmodem_1.Iout[1]
+Iout[2] <= txmodem:txmodem_1.Iout[2]
+Iout[3] <= txmodem:txmodem_1.Iout[3]
+Iout[4] <= txmodem:txmodem_1.Iout[4]
+Iout[5] <= txmodem:txmodem_1.Iout[5]
+Iout[6] <= txmodem:txmodem_1.Iout[6]
+Iout[7] <= txmodem:txmodem_1.Iout[7]
+Iout[8] <= txmodem:txmodem_1.Iout[8]
+Iout[9] <= txmodem:txmodem_1.Iout[9]
+Iout[10] <= txmodem:txmodem_1.Iout[10]
+Iout[11] <= txmodem:txmodem_1.Iout[11]
+Iout[12] <= txmodem:txmodem_1.Iout[12]
+Iout[13] <= txmodem:txmodem_1.Iout[13]
+Qout[0] <= txmodem:txmodem_1.Qout[0]
+Qout[1] <= txmodem:txmodem_1.Qout[1]
+Qout[2] <= txmodem:txmodem_1.Qout[2]
+Qout[3] <= txmodem:txmodem_1.Qout[3]
+Qout[4] <= txmodem:txmodem_1.Qout[4]
+Qout[5] <= txmodem:txmodem_1.Qout[5]
+Qout[6] <= txmodem:txmodem_1.Qout[6]
+Qout[7] <= txmodem:txmodem_1.Qout[7]
+Qout[8] <= txmodem:txmodem_1.Qout[8]
+Qout[9] <= txmodem:txmodem_1.Qout[9]
+Qout[10] <= txmodem:txmodem_1.Qout[10]
+Qout[11] <= txmodem:txmodem_1.Qout[11]
+Qout[12] <= txmodem:txmodem_1.Qout[12]
+Qout[13] <= txmodem:txmodem_1.Qout[13]
+Iin[0] => rxmodem:rxmodem_1.Iin[0]
+Iin[1] => rxmodem:rxmodem_1.Iin[1]
+Iin[2] => rxmodem:rxmodem_1.Iin[2]
+Iin[3] => rxmodem:rxmodem_1.Iin[3]
+Iin[4] => rxmodem:rxmodem_1.Iin[4]
+Iin[5] => rxmodem:rxmodem_1.Iin[5]
+Iin[6] => rxmodem:rxmodem_1.Iin[6]
+Iin[7] => rxmodem:rxmodem_1.Iin[7]
+Iin[8] => rxmodem:rxmodem_1.Iin[8]
+Iin[9] => rxmodem:rxmodem_1.Iin[9]
+Iin[10] => rxmodem:rxmodem_1.Iin[10]
+Iin[11] => rxmodem:rxmodem_1.Iin[11]
+Qin[0] => rxmodem:rxmodem_1.Qin[0]
+Qin[1] => rxmodem:rxmodem_1.Qin[1]
+Qin[2] => rxmodem:rxmodem_1.Qin[2]
+Qin[3] => rxmodem:rxmodem_1.Qin[3]
+Qin[4] => rxmodem:rxmodem_1.Qin[4]
+Qin[5] => rxmodem:rxmodem_1.Qin[5]
+Qin[6] => rxmodem:rxmodem_1.Qin[6]
+Qin[7] => rxmodem:rxmodem_1.Qin[7]
+Qin[8] => rxmodem:rxmodem_1.Qin[8]
+Qin[9] => rxmodem:rxmodem_1.Qin[9]
+Qin[10] => rxmodem:rxmodem_1.Qin[10]
+Qin[11] => rxmodem:rxmodem_1.Qin[11]
 
 
-|electraudio_modem|txmodem:txmodem_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1
 clk => input:input_1.clk
 clk => ofdm:ofdm_1.clk
 rst => input:input_1.rst
@@ -111,7 +272,7 @@ addrout_out[4] => ofdm:ofdm_1.addrout_out[4]
 addrout_out[5] => ofdm:ofdm_1.addrout_out[5]
 
 
-|electraudio_modem|txmodem:txmodem_1|input:input_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|input:input_1
 clk => sync.CLK
 clk => meta.CLK
 clk => q[0]~reg0.CLK
@@ -230,7 +391,7 @@ q[10] <= q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[11] <= q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1
 clk => cfft_control:cfft_control_1.clk
 clk => cfft:cfft_1.ClkIn
 rst => cfft_control:cfft_control_1.rst
@@ -307,7 +468,7 @@ addrout_out[4] => cfft:cfft_1.addrout_out[4]
 addrout_out[5] => cfft:cfft_1.addrout_out[5]
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1
 clk => counter:counter_1.clk
 clk => ram_control:ram_control_1.clk
 clk => mux_control:mux_control_1.clk
@@ -357,7 +518,7 @@ addrin_out[4] <= ram_control:ram_control_1.addrin_out[4]
 addrin_out[5] <= ram_control:ram_control_1.addrin_out[5]
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|counter:counter_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|counter:counter_1
 clk => aux_mem_bk.CLK
 clk => count_aux[0].CLK
 clk => count_aux[1].CLK
@@ -400,7 +561,7 @@ count[7] <= count_aux[7].DB_MAX_OUTPUT_PORT_TYPE
 count[8] <= count_aux[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|ram_control:ram_control_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|ram_control:ram_control_1
 clk => wen_out~reg0.CLK
 clk => outcounter[0].CLK
 clk => outcounter[1].CLK
@@ -573,7 +734,7 @@ addrin_out[4] <= outcounter[0].DB_MAX_OUTPUT_PORT_TYPE
 addrin_out[5] <= outcounter[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|mux_control:mux_control_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|mux_control:mux_control_1
 clk => sel_mux~reg0.CLK
 rst => sel_mux~reg0.ACLR
 Gen_state[0] => Equal2.IN13
@@ -591,7 +752,7 @@ Gen_state[8] => Equal1.IN5
 sel_mux <= sel_mux~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|starts:starts_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|starts:starts_1
 clk => cfft4start~reg0.CLK
 clk => factorstart~reg0.CLK
 rst => cfft4start~reg0.ACLR
@@ -615,7 +776,7 @@ factorstart <= factorstart~reg0.DB_MAX_OUTPUT_PORT_TYPE
 cfft4start <= cfft4start~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|inv_control:\TX_inv:inv_control_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|inv_control:\TX_inv:inv_control_1
 clk => inv~reg0.CLK
 rst => inv~reg0.ACLR
 Gen_state[0] => LessThan0.IN12
@@ -634,7 +795,7 @@ Gen_state[8] => Equal1.IN5
 inv <= inv~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|io_control:io_control_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|io_control:io_control_1
 clk => bank1_busy~reg0.CLK
 clk => bank0_busy~reg0.CLK
 clk => Output_enable~reg0.CLK
@@ -660,7 +821,7 @@ bank1_busy <= bank1_busy~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Output_enable <= Output_enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1
 rst => cfft4:acfft4.rst
 rst => mulfactor:amulfactor.rst
 rst => rofactor:arofactor.rst
@@ -774,7 +935,7 @@ addrout_out[4] => ram:TX:RamOut.addrout[4]
 addrout_out[5] => ram:TX:RamOut.addrout[5]
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\TX:RamIn
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\TX:RamIn
 clkin => blockdram:Real_ram.clkin
 clkin => blockdram:Imag_ram.clkin
 wen => blockdram:Real_ram.wen
@@ -855,7 +1016,7 @@ doutI[10] <= blockdram:Imag_ram.dout[10]
 doutI[11] <= blockdram:Imag_ram.dout[11]
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\TX:RamIn|blockdram:Real_ram
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\TX:RamIn|blockdram:Real_ram
 clkin => mem~18.CLK
 clkin => mem~0.CLK
 clkin => mem~1.CLK
@@ -940,7 +1101,7 @@ dout[10] <= mem.DATAOUT10
 dout[11] <= mem.DATAOUT11
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\TX:RamIn|blockdram:Imag_ram
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\TX:RamIn|blockdram:Imag_ram
 clkin => mem~18.CLK
 clkin => mem~0.CLK
 clkin => mem~1.CLK
@@ -1025,7 +1186,7 @@ dout[10] <= mem.DATAOUT10
 dout[11] <= mem.DATAOUT11
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\TX:RamOut
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\TX:RamOut
 clkin => blockdram:Real_ram.clkin
 clkin => blockdram:Imag_ram.clkin
 wen => blockdram:Real_ram.wen
@@ -1114,7 +1275,7 @@ doutI[12] <= blockdram:Imag_ram.dout[12]
 doutI[13] <= blockdram:Imag_ram.dout[13]
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\TX:RamOut|blockdram:Real_ram
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\TX:RamOut|blockdram:Real_ram
 clkin => mem~20.CLK
 clkin => mem~0.CLK
 clkin => mem~1.CLK
@@ -1207,7 +1368,7 @@ dout[12] <= mem.DATAOUT12
 dout[13] <= mem.DATAOUT13
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\TX:RamOut|blockdram:Imag_ram
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\TX:RamOut|blockdram:Imag_ram
 clkin => mem~20.CLK
 clkin => mem~0.CLK
 clkin => mem~1.CLK
@@ -1300,7 +1461,7 @@ dout[12] <= mem.DATAOUT12
 dout[13] <= mem.DATAOUT13
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:RamProc
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:RamProc
 clkin => blockdram:Real_ram.clkin
 clkin => blockdram:Imag_ram.clkin
 wen => blockdram:Real_ram.wen
@@ -1381,7 +1542,7 @@ doutI[10] <= blockdram:Imag_ram.dout[10]
 doutI[11] <= blockdram:Imag_ram.dout[11]
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:RamProc|blockdram:Real_ram
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:RamProc|blockdram:Real_ram
 clkin => mem~18.CLK
 clkin => mem~0.CLK
 clkin => mem~1.CLK
@@ -1466,7 +1627,7 @@ dout[10] <= mem.DATAOUT10
 dout[11] <= mem.DATAOUT11
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:RamProc|blockdram:Imag_ram
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:RamProc|blockdram:Imag_ram
 clkin => mem~18.CLK
 clkin => mem~0.CLK
 clkin => mem~1.CLK
@@ -1551,7 +1712,7 @@ dout[10] <= mem.DATAOUT10
 dout[11] <= mem.DATAOUT11
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mux:mux_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mux:mux_1
 inRa[0] => outR.DATAB
 inRa[1] => outR.DATAB
 inRa[2] => outR.DATAB
@@ -1674,7 +1835,7 @@ sel => outI.OUTPUTSELECT
 sel => outI.OUTPUTSELECT
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|conj:conj_1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|conj:conj_1
 inR[0] => outR[0]~reg0.DATAIN
 inR[1] => outR[1]~reg0.DATAIN
 inR[2] => outR[2]~reg0.DATAIN
@@ -1773,7 +1934,7 @@ conj => outI.OUTPUTSELECT
 conj => outI.OUTPUTSELECT
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|cfft4:acfft4
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|cfft4:acfft4
 clk => Qout[0]~reg0.CLK
 clk => Qout[1]~reg0.CLK
 clk => Qout[2]~reg0.CLK
@@ -2160,7 +2321,7 @@ Qout[12] <= Qout[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Qout[13] <= Qout[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor
 clk => sc_corproc:u1.clk
 clk => Yi[0].CLK
 clk => Yi[1].CLK
@@ -2404,7 +2565,7 @@ Qout[14] <= sc_corproc:u1.sin[14]
 Qout[15] <= sc_corproc:u1.sin[15]
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1
 clk => p2r_cordic:u1.clk
 ena => p2r_cordic:u1.ena
 Xin[0] => p2r_cordic:u1.Xi[5]
@@ -2475,7 +2636,7 @@ cos[14] <= p2r_cordic:u1.Xo[19]
 cos[15] <= p2r_cordic:u1.Xo[19]
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1
 clk => p2r_CordicPipe:gen_pipe:1:Pipe.clk
 clk => p2r_CordicPipe:gen_pipe:2:Pipe.clk
 clk => p2r_CordicPipe:gen_pipe:3:Pipe.clk
@@ -2594,7 +2755,7 @@ Yo[18] <= p2r_CordicPipe:gen_pipe:8:Pipe.Yo[18]
 Yo[19] <= p2r_CordicPipe:gen_pipe:8:Pipe.Yo[19]
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:1:Pipe
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:1:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -2997,7 +3158,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:2:Pipe
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:2:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -3440,7 +3601,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:3:Pipe
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:3:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -3883,7 +4044,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:4:Pipe
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:4:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -4326,7 +4487,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:5:Pipe
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:5:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -4769,7 +4930,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:6:Pipe
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:6:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -5212,7 +5373,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:7:Pipe
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:7:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -5655,7 +5816,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:8:Pipe
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:8:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -6098,7 +6259,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|rofactor:arofactor
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|rofactor:arofactor
 clk => iinc[0].CLK
 clk => iinc[1].CLK
 clk => iinc[2].CLK
@@ -6202,7 +6363,7 @@ angle[4] <= phase[4].DB_MAX_OUTPUT_PORT_TYPE
 angle[5] <= phase[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|div4limit:Rlimit
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|div4limit:Rlimit
 clk => Q[0]~reg0.CLK
 clk => Q[1]~reg0.CLK
 clk => Q[2]~reg0.CLK
@@ -6245,7 +6406,7 @@ Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|div4limit:Ilimit
+|electraudio_modem|modem:M0|txmodem:txmodem_1|ofdm:ofdm_1|cfft:cfft_1|div4limit:Ilimit
 clk => Q[0]~reg0.CLK
 clk => Q[1]~reg0.CLK
 clk => Q[2]~reg0.CLK
@@ -6288,7 +6449,7 @@ Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|txrx:txrx_1
+|electraudio_modem|modem:M0|txrx:txrx_1
 clk => mem_ready~reg0.CLK
 clk => wen_aux.CLK
 clk => add[0].CLK
@@ -6347,7 +6508,7 @@ address_write[5] <= address_write[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 address_write[6] <= address_write[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1
 clk => ofdm:ofdm_1.clk
 clk => output:output_1.clk
 rst => ofdm:ofdm_1.rst
@@ -6389,7 +6550,7 @@ addrin_in[6] => ofdm:ofdm_1.addrin_in[6]
 txserial <= output:output_1.txserial
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1
 clk => cfft_control:cfft_control_1.clk
 clk => cfft:cfft_1.ClkIn
 rst => cfft_control:cfft_control_1.rst
@@ -6467,7 +6628,7 @@ addrout_out[4] => cfft:cfft_1.addrout_out[4]
 addrout_out[5] => cfft:cfft_1.addrout_out[5]
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1
 clk => counter:counter_1.clk
 clk => ram_control:ram_control_1.clk
 clk => mux_control:mux_control_1.clk
@@ -6516,7 +6677,7 @@ addrin_out[4] <= ram_control:ram_control_1.addrin_out[4]
 addrin_out[5] <= ram_control:ram_control_1.addrin_out[5]
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|counter:counter_1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|counter:counter_1
 clk => aux_mem_bk.CLK
 clk => count_aux[0].CLK
 clk => count_aux[1].CLK
@@ -6559,7 +6720,7 @@ count[7] <= count_aux[7].DB_MAX_OUTPUT_PORT_TYPE
 count[8] <= count_aux[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|ram_control:ram_control_1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|ram_control:ram_control_1
 clk => wen_out~reg0.CLK
 clk => outcounter[0].CLK
 clk => outcounter[1].CLK
@@ -6735,7 +6896,7 @@ addrin_out[4] <= outcounter[0].DB_MAX_OUTPUT_PORT_TYPE
 addrin_out[5] <= outcounter[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|mux_control:mux_control_1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|mux_control:mux_control_1
 clk => sel_mux~reg0.CLK
 rst => sel_mux~reg0.ACLR
 Gen_state[0] => Equal2.IN13
@@ -6753,7 +6914,7 @@ Gen_state[8] => Equal1.IN5
 sel_mux <= sel_mux~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|starts:starts_1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|starts:starts_1
 clk => cfft4start~reg0.CLK
 clk => factorstart~reg0.CLK
 rst => cfft4start~reg0.ACLR
@@ -6777,7 +6938,7 @@ factorstart <= factorstart~reg0.DB_MAX_OUTPUT_PORT_TYPE
 cfft4start <= cfft4start~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|io_control:io_control_1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft_control:cfft_control_1|io_control:io_control_1
 clk => bank1_busy~reg0.CLK
 clk => bank0_busy~reg0.CLK
 clk => Output_enable~reg0.CLK
@@ -6803,7 +6964,7 @@ bank1_busy <= bank1_busy~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Output_enable <= Output_enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1
 rst => cfft4:acfft4.rst
 rst => mulfactor:amulfactor.rst
 rst => rofactor:arofactor.rst
@@ -6919,7 +7080,7 @@ addrout_out[4] => ram:RX:RamOut.addrout[4]
 addrout_out[5] => ram:RX:RamOut.addrout[5]
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\RX:RamIn
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\RX:RamIn
 clkin => blockdram:Real_ram.clkin
 clkin => blockdram:Imag_ram.clkin
 wen => blockdram:Real_ram.wen
@@ -7004,7 +7165,7 @@ doutI[10] <= blockdram:Imag_ram.dout[10]
 doutI[11] <= blockdram:Imag_ram.dout[11]
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\RX:RamIn|blockdram:Real_ram
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\RX:RamIn|blockdram:Real_ram
 clkin => mem~19.CLK
 clkin => mem~0.CLK
 clkin => mem~1.CLK
@@ -7094,7 +7255,7 @@ dout[10] <= mem.DATAOUT10
 dout[11] <= mem.DATAOUT11
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\RX:RamIn|blockdram:Imag_ram
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\RX:RamIn|blockdram:Imag_ram
 clkin => mem~19.CLK
 clkin => mem~0.CLK
 clkin => mem~1.CLK
@@ -7184,7 +7345,7 @@ dout[10] <= mem.DATAOUT10
 dout[11] <= mem.DATAOUT11
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\RX:RamOut
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\RX:RamOut
 clkin => blockdram:Real_ram.clkin
 clkin => blockdram:Imag_ram.clkin
 wen => blockdram:Real_ram.wen
@@ -7273,7 +7434,7 @@ doutI[12] <= blockdram:Imag_ram.dout[12]
 doutI[13] <= blockdram:Imag_ram.dout[13]
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\RX:RamOut|blockdram:Real_ram
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\RX:RamOut|blockdram:Real_ram
 clkin => mem~20.CLK
 clkin => mem~0.CLK
 clkin => mem~1.CLK
@@ -7366,7 +7527,7 @@ dout[12] <= mem.DATAOUT12
 dout[13] <= mem.DATAOUT13
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\RX:RamOut|blockdram:Imag_ram
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:\RX:RamOut|blockdram:Imag_ram
 clkin => mem~20.CLK
 clkin => mem~0.CLK
 clkin => mem~1.CLK
@@ -7459,7 +7620,7 @@ dout[12] <= mem.DATAOUT12
 dout[13] <= mem.DATAOUT13
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:RamProc
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:RamProc
 clkin => blockdram:Real_ram.clkin
 clkin => blockdram:Imag_ram.clkin
 wen => blockdram:Real_ram.wen
@@ -7540,7 +7701,7 @@ doutI[10] <= blockdram:Imag_ram.dout[10]
 doutI[11] <= blockdram:Imag_ram.dout[11]
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:RamProc|blockdram:Real_ram
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:RamProc|blockdram:Real_ram
 clkin => mem~18.CLK
 clkin => mem~0.CLK
 clkin => mem~1.CLK
@@ -7625,7 +7786,7 @@ dout[10] <= mem.DATAOUT10
 dout[11] <= mem.DATAOUT11
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:RamProc|blockdram:Imag_ram
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|ram:RamProc|blockdram:Imag_ram
 clkin => mem~18.CLK
 clkin => mem~0.CLK
 clkin => mem~1.CLK
@@ -7710,7 +7871,7 @@ dout[10] <= mem.DATAOUT10
 dout[11] <= mem.DATAOUT11
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mux:mux_1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mux:mux_1
 inRa[0] => outR.DATAB
 inRa[1] => outR.DATAB
 inRa[2] => outR.DATAB
@@ -7833,7 +7994,7 @@ sel => outI.OUTPUTSELECT
 sel => outI.OUTPUTSELECT
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|conj:conj_1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|conj:conj_1
 inR[0] => outR[0]~reg0.DATAIN
 inR[1] => outR[1]~reg0.DATAIN
 inR[2] => outR[2]~reg0.DATAIN
@@ -7932,7 +8093,7 @@ conj => outI.OUTPUTSELECT
 conj => outI.OUTPUTSELECT
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|cfft4:acfft4
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|cfft4:acfft4
 clk => Qout[0]~reg0.CLK
 clk => Qout[1]~reg0.CLK
 clk => Qout[2]~reg0.CLK
@@ -8319,7 +8480,7 @@ Qout[12] <= Qout[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Qout[13] <= Qout[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor
 clk => sc_corproc:u1.clk
 clk => Yi[0].CLK
 clk => Yi[1].CLK
@@ -8563,7 +8724,7 @@ Qout[14] <= sc_corproc:u1.sin[14]
 Qout[15] <= sc_corproc:u1.sin[15]
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1
 clk => p2r_cordic:u1.clk
 ena => p2r_cordic:u1.ena
 Xin[0] => p2r_cordic:u1.Xi[5]
@@ -8634,7 +8795,7 @@ cos[14] <= p2r_cordic:u1.Xo[19]
 cos[15] <= p2r_cordic:u1.Xo[19]
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1
 clk => p2r_CordicPipe:gen_pipe:1:Pipe.clk
 clk => p2r_CordicPipe:gen_pipe:2:Pipe.clk
 clk => p2r_CordicPipe:gen_pipe:3:Pipe.clk
@@ -8753,7 +8914,7 @@ Yo[18] <= p2r_CordicPipe:gen_pipe:8:Pipe.Yo[18]
 Yo[19] <= p2r_CordicPipe:gen_pipe:8:Pipe.Yo[19]
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:1:Pipe
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:1:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -9156,7 +9317,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:2:Pipe
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:2:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -9599,7 +9760,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:3:Pipe
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:3:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -10042,7 +10203,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:4:Pipe
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:4:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -10485,7 +10646,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:5:Pipe
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:5:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -10928,7 +11089,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:6:Pipe
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:6:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -11371,7 +11532,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:7:Pipe
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:7:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -11814,7 +11975,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:8:Pipe
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|mulfactor:amulfactor|sc_corproc:u1|p2r_cordic:u1|p2r_CordicPipe:\gen_pipe:8:Pipe
 clk => Zo[0]~reg0.CLK
 clk => Zo[1]~reg0.CLK
 clk => Zo[2]~reg0.CLK
@@ -12257,7 +12418,7 @@ Zo[18] <= Zo[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Zo[19] <= Zo[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|rofactor:arofactor
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|rofactor:arofactor
 clk => iinc[0].CLK
 clk => iinc[1].CLK
 clk => iinc[2].CLK
@@ -12361,7 +12522,7 @@ angle[4] <= phase[4].DB_MAX_OUTPUT_PORT_TYPE
 angle[5] <= phase[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|div4limit:Rlimit
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|div4limit:Rlimit
 clk => Q[0]~reg0.CLK
 clk => Q[1]~reg0.CLK
 clk => Q[2]~reg0.CLK
@@ -12404,7 +12565,7 @@ Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|div4limit:Ilimit
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|ofdm:ofdm_1|cfft:cfft_1|div4limit:Ilimit
 clk => Q[0]~reg0.CLK
 clk => Q[1]~reg0.CLK
 clk => Q[2]~reg0.CLK
@@ -12447,7 +12608,7 @@ Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|electraudio_modem|rxmodem:rxmodem_1|output:output_1
+|electraudio_modem|modem:M0|rxmodem:rxmodem_1|output:output_1
 clk => txserial~reg0.CLK
 clk => addr[0].CLK
 clk => addr[1].CLK

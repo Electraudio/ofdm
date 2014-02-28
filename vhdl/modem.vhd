@@ -8,7 +8,7 @@ use IEEE.STD_LOGIC_UNSIGNED.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity electraudio_modem is
+entity modem is
   port ( clk            : in  std_logic;
          rsti            : in  std_logic;
          rxserial       : in  std_logic;
@@ -19,12 +19,14 @@ entity electraudio_modem is
          pwen           : out std_logic;
          paddress_read  : out std_logic_vector(5 downto 0);
          paddress_write : out std_logic_vector(6 downto 0);
-         Iout_rx          : out std_logic_vector(13 downto 0);
-         Qout_rx          : out std_logic_vector(13 downto 0)
+         Iout          : out std_logic_vector(13 downto 0);
+         Qout          : out std_logic_vector(13 downto 0);
+			Iin          : in std_logic_vector(11 downto 0);
+         Qin          : in std_logic_vector(11 downto 0)
          );
-end electraudio_modem;
+end modem;
 
-architecture modem of electraudio_modem is
+architecture modem of modem is
 
   component txmodem
     port (
@@ -67,8 +69,8 @@ architecture modem of electraudio_modem is
 
   signal rst           : std_logic;
   signal mem_ready     : std_logic;
-  signal Iin           : std_logic_vector(13 downto 0);
-  signal Qin           : std_logic_vector(13 downto 0);
+  signal Iin_loop           : std_logic_vector(13 downto 0);
+  signal Qin_loop           : std_logic_vector(13 downto 0);
   signal mem_block     : std_logic;
   signal Output_enable : std_logic;
   signal wen           : std_logic;
@@ -77,8 +79,8 @@ architecture modem of electraudio_modem is
   
 begin
   rst <= rsti;
-  Iout_rx <= Iin;
-  Qout_rx <= Qin;
+--  Iout_rx <= Iin;
+--  Qout_rx <= Qin;
   pmem_ready <= mem_ready;
   pmem_block <= mem_block;
   poutput_enable <= Output_enable;
@@ -92,8 +94,8 @@ begin
       clk           => clk,
       rst           => rst,
       serial        => rxserial,
-      Iout          => Iin,
-	  Qout          => Qin,
+      Iout          => Iout,
+	  Qout          => Qout,
       Output_enable => Output_enable,
       addrout_out   => address_read
       );
@@ -114,8 +116,8 @@ begin
       clk           => clk,
       rst           => rst,
       mem_ready     => mem_ready,
-      Iin           => Iin(13 downto 2),
-	  Qin           => Qin(13 downto 2),
+      Iin           => Iin,
+	  Qin           => Qin,
       mem_block     => mem_block,
       wen           => wen,
       addrin_in     => address_write,

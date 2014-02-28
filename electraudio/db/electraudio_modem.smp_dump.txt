@@ -1,5 +1,5 @@
 
-State Machine - |electraudio_modem|rxmodem:rxmodem_1|output:output_1|st
+State Machine - |electraudio_modem|modem:M0|rxmodem:rxmodem_1|output:output_1|st
 Name st.s8 st.s7 st.s6 st.s5 st.s4 st.s3 st.s2 st.s1 st.s0 
 st.s0 0 0 0 0 0 0 0 0 0 
 st.s1 0 0 0 0 0 0 0 1 1 
@@ -11,14 +11,14 @@ st.s6 0 0 1 0 0 0 0 0 1
 st.s7 0 1 0 0 0 0 0 0 1 
 st.s8 1 0 0 0 0 0 0 0 1 
 
-State Machine - |electraudio_modem|txrx:txrx_1|st
+State Machine - |electraudio_modem|modem:M0|txrx:txrx_1|st
 Name st.s3 st.s2 st.s1 st.s0 
 st.s0 0 0 0 0 
 st.s1 0 0 1 1 
 st.s2 0 1 0 1 
 st.s3 1 0 0 1 
 
-State Machine - |electraudio_modem|txmodem:txmodem_1|input:input_1|st
+State Machine - |electraudio_modem|modem:M0|txmodem:txmodem_1|input:input_1|st
 Name st.s7 st.s6 st.s5 st.s4 st.s3 st.s2 st.s1 st.s0 
 st.s0 0 0 0 0 0 0 0 0 
 st.s1 0 0 0 0 0 0 1 1 
