@@ -75,6 +75,7 @@ ARCHITECTURE behavior OF modem_tb IS
 
    -- Clock period definitions
    constant clk_period : time := 125 ns;
+   constant serial_period : time := clk_period*4;
  
 BEGIN
  
@@ -97,27 +98,40 @@ BEGIN
    -- Clock process definitions
    clk_process :process
    begin
-		clk <= '0';
-		wait for clk_period/2;
 		clk <= '1';
+		wait for clk_period/2;
+		clk <= '0';
 		wait for clk_period/2;
    end process;
 	
 	serial_process :process
+	variable start : integer := 0;
    begin
-		wait for 500 ns;
+    if start = 0 then
+		wait for clk_period;
+		start := 1;
+		else
+--		rxserial <= '1';
+--    wait for serial_period;
+--		rxserial <= '0';
+--		wait for serial_period;
+		
 		rxserial <= '1';
-		wait for clk_period*4;
+		wait for serial_period;
 		rxserial <= '0';
-		wait for clk_period*248;
+		wait for serial_period*61;
+		wait for serial_period*1;
 		rxserial <= '1';
-		wait for clk_period*4;
+		wait for serial_period;
 		rxserial <= '0';
-		wait for clk_period*252;
+		wait for serial_period*60;
+		wait for serial_period*2;
 		rxserial <= '1';
-		wait for clk_period*4;
+		wait for serial_period;
 		rxserial <= '0';
-		wait;
+		wait for serial_period*59;
+--		wait;
+    end if;
    end process;
  
 
@@ -125,7 +139,7 @@ BEGIN
    stim_proc: process
    begin		
 		rsti <= '1';
-    wait for 500 ns;
+    wait for clk_period;
 		rsti <= '0';
 
       -- insert stimulus here
