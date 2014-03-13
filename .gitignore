@@ -1,3 +1,6 @@
+electraudio/db
+electraudio/incremental_db
+
 #################
 ## Modelsim
 #################
