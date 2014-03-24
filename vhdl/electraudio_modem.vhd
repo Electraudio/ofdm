@@ -30,8 +30,21 @@ architecture arch of electraudio_modem is
 	signal clk_50 : std_logic;
 	signal rst : std_logic;
 	signal iserial : std_logic;
+	signal lucky_ramp_q : std_logic_vector(13 downto 0);
+	signal lucky_ramp_d : std_logic_vector(13 downto 0);
+	signal I_loop : std_logic_vector(13 downto 0);
 
 begin
+
+	lucky_ramp_d <= "00000000000000" when lucky_ramp_q >= "11111111111111"
+	else lucky_ramp_q + 1;
+	
+	lucky_ramp_q <= lucky_ramp_d when rising_edge(clk_100);
+	
+	DAC_DA <= lucky_ramp_q;-- & "0000000";
+	DAC_DB <= lucky_ramp_q;
+	--DAC_DA <= I_loop;
+	--DAC_DB <= I_loop;
 
 	rst <= not(KEY(0));
 	iserial <= not(KEY(3));
@@ -52,6 +65,7 @@ begin
 
 P0 : entity work.pll port map(
 		inclk0	 => iCLK_50,
+		areset => rst,
 		c0	 => clk_10,
 		c1	 => clk_100,
 		c2	 => clk_50);
@@ -61,10 +75,11 @@ M0 : entity work.modem port map(
        rsti => rst,
        rxserial => iserial,
        txserial => LEDG(7),
-       Iout => DAC_DA,
-       Qout => DAC_DB,
-       Iin => ADC_DA(13 downto 2),
-       Qin => ADC_DB(13 downto 2)
+       Iout => I_loop,
+--       Qout => DAC_DB,
+--       Iin => I_loop(13 downto 2),
+	    Iin => ADC_DA(13 downto 2),
+       Qin => (others=>'0')--ADC_DB(13 downto 2)
 );
 
 end arch;

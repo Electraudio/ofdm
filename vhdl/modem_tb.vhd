@@ -111,26 +111,26 @@ BEGIN
 		wait for clk_period;
 		start := 1;
 		else
---		rxserial <= '1';
+		rxserial <= '1';
 --    wait for serial_period;
 --		rxserial <= '0';
 --		wait for serial_period;
 		
-		rxserial <= '1';
-		wait for serial_period;
-		rxserial <= '0';
-		wait for serial_period*61;
-		wait for serial_period*1;
-		rxserial <= '1';
-		wait for serial_period;
-		rxserial <= '0';
-		wait for serial_period*60;
-		wait for serial_period*2;
-		rxserial <= '1';
-		wait for serial_period;
-		rxserial <= '0';
-		wait for serial_period*59;
---		wait;
+--		rxserial <= '1';
+--		wait for serial_period;
+--		rxserial <= '0';
+--		wait for serial_period*61;
+--		wait for serial_period*1;
+--		rxserial <= '1';
+--		wait for serial_period;
+--		rxserial <= '0';
+--		wait for serial_period*60;
+--		wait for serial_period*2;
+--		rxserial <= '1';
+--		wait for serial_period;
+--		rxserial <= '0';
+--		wait for serial_period*59;
+		wait;
     end if;
    end process;
  

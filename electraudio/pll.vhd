@@ -42,10 +42,12 @@ USE altera_mf.all;
 ENTITY pll IS
 	PORT
 	(
+		areset		: IN STD_LOGIC  := '0';
 		inclk0		: IN STD_LOGIC  := '0';
 		c0		: OUT STD_LOGIC ;
 		c1		: OUT STD_LOGIC ;
-		c2		: OUT STD_LOGIC 
+		c2		: OUT STD_LOGIC ;
+		locked		: OUT STD_LOGIC 
 	);
 END pll;
 
@@ -57,9 +59,10 @@ ARCHITECTURE SYN OF pll IS
 	SIGNAL sub_wire2	: STD_LOGIC ;
 	SIGNAL sub_wire3	: STD_LOGIC ;
 	SIGNAL sub_wire4	: STD_LOGIC ;
-	SIGNAL sub_wire5	: STD_LOGIC_VECTOR (1 DOWNTO 0);
-	SIGNAL sub_wire6_bv	: BIT_VECTOR (0 DOWNTO 0);
-	SIGNAL sub_wire6	: STD_LOGIC_VECTOR (0 DOWNTO 0);
+	SIGNAL sub_wire5	: STD_LOGIC ;
+	SIGNAL sub_wire6	: STD_LOGIC_VECTOR (1 DOWNTO 0);
+	SIGNAL sub_wire7_bv	: BIT_VECTOR (0 DOWNTO 0);
+	SIGNAL sub_wire7	: STD_LOGIC_VECTOR (0 DOWNTO 0);
 
 
 
@@ -78,8 +81,10 @@ ARCHITECTURE SYN OF pll IS
 		clk2_multiply_by		: NATURAL;
 		clk2_phase_shift		: STRING;
 		compensate_clock		: STRING;
+		gate_lock_signal		: STRING;
 		inclk0_input_frequency		: NATURAL;
 		intended_device_family		: STRING;
+		invalid_lock_multiplier		: NATURAL;
 		lpm_hint		: STRING;
 		lpm_type		: STRING;
 		operation_mode		: STRING;
@@ -123,25 +128,29 @@ ARCHITECTURE SYN OF pll IS
 		port_extclk0		: STRING;
 		port_extclk1		: STRING;
 		port_extclk2		: STRING;
-		port_extclk3		: STRING
+		port_extclk3		: STRING;
+		valid_lock_multiplier		: NATURAL
 	);
 	PORT (
+			areset	: IN STD_LOGIC ;
 			clk	: OUT STD_LOGIC_VECTOR (5 DOWNTO 0);
-			inclk	: IN STD_LOGIC_VECTOR (1 DOWNTO 0)
+			inclk	: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+			locked	: OUT STD_LOGIC 
 	);
 	END COMPONENT;
 
 BEGIN
-	sub_wire6_bv(0 DOWNTO 0) <= "0";
-	sub_wire6    <= To_stdlogicvector(sub_wire6_bv);
-	sub_wire3    <= sub_wire0(2);
-	sub_wire2    <= sub_wire0(0);
+	sub_wire7_bv(0 DOWNTO 0) <= "0";
+	sub_wire7    <= To_stdlogicvector(sub_wire7_bv);
+	sub_wire4    <= sub_wire0(2);
+	sub_wire3    <= sub_wire0(0);
 	sub_wire1    <= sub_wire0(1);
 	c1    <= sub_wire1;
-	c0    <= sub_wire2;
-	c2    <= sub_wire3;
-	sub_wire4    <= inclk0;
-	sub_wire5    <= sub_wire6(0 DOWNTO 0) & sub_wire4;
+	locked    <= sub_wire2;
+	c0    <= sub_wire3;
+	c2    <= sub_wire4;
+	sub_wire5    <= inclk0;
+	sub_wire6    <= sub_wire7(0 DOWNTO 0) & sub_wire5;
 
 	altpll_component : altpll
 	GENERIC MAP (
@@ -158,13 +167,15 @@ BEGIN
 		clk2_multiply_by => 1,
 		clk2_phase_shift => "0",
 		compensate_clock => "CLK0",
+		gate_lock_signal => "NO",
 		inclk0_input_frequency => 20000,
 		intended_device_family => "Cyclone II",
+		invalid_lock_multiplier => 5,
 		lpm_hint => "CBX_MODULE_PREFIX=pll",
 		lpm_type => "altpll",
 		operation_mode => "NORMAL",
 		port_activeclock => "PORT_UNUSED",
-		port_areset => "PORT_UNUSED",
+		port_areset => "PORT_USED",
 		port_clkbad0 => "PORT_UNUSED",
 		port_clkbad1 => "PORT_UNUSED",
 		port_clkloss => "PORT_UNUSED",
@@ -173,7 +184,7 @@ BEGIN
 		port_fbin => "PORT_UNUSED",
 		port_inclk0 => "PORT_USED",
 		port_inclk1 => "PORT_UNUSED",
-		port_locked => "PORT_UNUSED",
+		port_locked => "PORT_USED",
 		port_pfdena => "PORT_UNUSED",
 		port_phasecounterselect => "PORT_UNUSED",
 		port_phasedone => "PORT_UNUSED",
@@ -203,11 +214,14 @@ BEGIN
 		port_extclk0 => "PORT_UNUSED",
 		port_extclk1 => "PORT_UNUSED",
 		port_extclk2 => "PORT_UNUSED",
-		port_extclk3 => "PORT_UNUSED"
+		port_extclk3 => "PORT_UNUSED",
+		valid_lock_multiplier => 1
 	)
 	PORT MAP (
-		inclk => sub_wire5,
-		clk => sub_wire0
+		areset => areset,
+		inclk => sub_wire6,
+		clk => sub_wire0,
+		locked => sub_wire2
 	);
 
 
@@ -258,7 +272,7 @@ END SYN;
 -- Retrieval info: PRIVATE: INCLK1_FREQ_UNIT_COMBO STRING "MHz"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
 -- Retrieval info: PRIVATE: INT_FEEDBACK__MODE_RADIO STRING "1"
--- Retrieval info: PRIVATE: LOCKED_OUTPUT_CHECK STRING "0"
+-- Retrieval info: PRIVATE: LOCKED_OUTPUT_CHECK STRING "1"
 -- Retrieval info: PRIVATE: LONG_SCAN_RADIO STRING "1"
 -- Retrieval info: PRIVATE: LVDS_MODE_DATA_RATE STRING "Not Available"
 -- Retrieval info: PRIVATE: LVDS_MODE_DATA_RATE_DIRTY NUMERIC "0"
@@ -292,7 +306,7 @@ END SYN;
 -- Retrieval info: PRIVATE: PHASE_SHIFT_UNIT1 STRING "deg"
 -- Retrieval info: PRIVATE: PHASE_SHIFT_UNIT2 STRING "deg"
 -- Retrieval info: PRIVATE: PLL_ADVANCED_PARAM_CHECK STRING "0"
--- Retrieval info: PRIVATE: PLL_ARESET_CHECK STRING "0"
+-- Retrieval info: PRIVATE: PLL_ARESET_CHECK STRING "1"
 -- Retrieval info: PRIVATE: PLL_AUTOPLL_CHECK NUMERIC "1"
 -- Retrieval info: PRIVATE: PLL_ENA_CHECK STRING "0"
 -- Retrieval info: PRIVATE: PLL_ENHPLL_CHECK NUMERIC "0"
@@ -341,12 +355,14 @@ END SYN;
 -- Retrieval info: CONSTANT: CLK2_MULTIPLY_BY NUMERIC "1"
 -- Retrieval info: CONSTANT: CLK2_PHASE_SHIFT STRING "0"
 -- Retrieval info: CONSTANT: COMPENSATE_CLOCK STRING "CLK0"
+-- Retrieval info: CONSTANT: GATE_LOCK_SIGNAL STRING "NO"
 -- Retrieval info: CONSTANT: INCLK0_INPUT_FREQUENCY NUMERIC "20000"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
+-- Retrieval info: CONSTANT: INVALID_LOCK_MULTIPLIER NUMERIC "5"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altpll"
 -- Retrieval info: CONSTANT: OPERATION_MODE STRING "NORMAL"
 -- Retrieval info: CONSTANT: PORT_ACTIVECLOCK STRING "PORT_UNUSED"
--- Retrieval info: CONSTANT: PORT_ARESET STRING "PORT_UNUSED"
+-- Retrieval info: CONSTANT: PORT_ARESET STRING "PORT_USED"
 -- Retrieval info: CONSTANT: PORT_CLKBAD0 STRING "PORT_UNUSED"
 -- Retrieval info: CONSTANT: PORT_CLKBAD1 STRING "PORT_UNUSED"
 -- Retrieval info: CONSTANT: PORT_CLKLOSS STRING "PORT_UNUSED"
@@ -355,7 +371,7 @@ END SYN;
 -- Retrieval info: CONSTANT: PORT_FBIN STRING "PORT_UNUSED"
 -- Retrieval info: CONSTANT: PORT_INCLK0 STRING "PORT_USED"
 -- Retrieval info: CONSTANT: PORT_INCLK1 STRING "PORT_UNUSED"
--- Retrieval info: CONSTANT: PORT_LOCKED STRING "PORT_UNUSED"
+-- Retrieval info: CONSTANT: PORT_LOCKED STRING "PORT_USED"
 -- Retrieval info: CONSTANT: PORT_PFDENA STRING "PORT_UNUSED"
 -- Retrieval info: CONSTANT: PORT_PHASECOUNTERSELECT STRING "PORT_UNUSED"
 -- Retrieval info: CONSTANT: PORT_PHASEDONE STRING "PORT_UNUSED"
@@ -386,18 +402,23 @@ END SYN;
 -- Retrieval info: CONSTANT: PORT_extclk1 STRING "PORT_UNUSED"
 -- Retrieval info: CONSTANT: PORT_extclk2 STRING "PORT_UNUSED"
 -- Retrieval info: CONSTANT: PORT_extclk3 STRING "PORT_UNUSED"
+-- Retrieval info: CONSTANT: VALID_LOCK_MULTIPLIER NUMERIC "1"
 -- Retrieval info: USED_PORT: @clk 0 0 6 0 OUTPUT_CLK_EXT VCC "@clk[5..0]"
 -- Retrieval info: USED_PORT: @extclk 0 0 4 0 OUTPUT_CLK_EXT VCC "@extclk[3..0]"
 -- Retrieval info: USED_PORT: @inclk 0 0 2 0 INPUT_CLK_EXT VCC "@inclk[1..0]"
+-- Retrieval info: USED_PORT: areset 0 0 0 0 INPUT GND "areset"
 -- Retrieval info: USED_PORT: c0 0 0 0 0 OUTPUT_CLK_EXT VCC "c0"
 -- Retrieval info: USED_PORT: c1 0 0 0 0 OUTPUT_CLK_EXT VCC "c1"
 -- Retrieval info: USED_PORT: c2 0 0 0 0 OUTPUT_CLK_EXT VCC "c2"
 -- Retrieval info: USED_PORT: inclk0 0 0 0 0 INPUT_CLK_EXT GND "inclk0"
+-- Retrieval info: USED_PORT: locked 0 0 0 0 OUTPUT GND "locked"
+-- Retrieval info: CONNECT: @areset 0 0 0 0 areset 0 0 0 0
 -- Retrieval info: CONNECT: @inclk 0 0 1 1 GND 0 0 0 0
 -- Retrieval info: CONNECT: @inclk 0 0 1 0 inclk0 0 0 0 0
 -- Retrieval info: CONNECT: c0 0 0 0 0 @clk 0 0 1 0
 -- Retrieval info: CONNECT: c1 0 0 0 0 @clk 0 0 1 1
 -- Retrieval info: CONNECT: c2 0 0 0 0 @clk 0 0 1 2
+-- Retrieval info: CONNECT: locked 0 0 0 0 @locked 0 0 0 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL pll.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL pll.ppf TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL pll.inc FALSE

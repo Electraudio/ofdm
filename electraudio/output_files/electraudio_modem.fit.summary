@@ -1,16 +1,16 @@
-Fitter Status : Successful - Thu Feb 27 14:45:31 2014
+Fitter Status : Successful - Fri Mar 21 13:20:54 2014
 Quartus II 64-Bit Version : 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition
 Revision Name : electraudio_modem
 Top-level Entity Name : electraudio_modem
 Family : Cyclone II
 Device : EP2C70F896C6
 Timing Models : Final
-Total logic elements : 2,798 / 68,416 ( 4 % )
-    Total combinational functions : 2,341 / 68,416 ( 3 % )
-    Dedicated logic registers : 1,776 / 68,416 ( 3 % )
-Total registers : 1776
+Total logic elements : 2,491 / 68,416 ( 4 % )
+    Total combinational functions : 1,854 / 68,416 ( 3 % )
+    Dedicated logic registers : 1,714 / 68,416 ( 3 % )
+Total registers : 1714
 Total pins : 80 / 622 ( 13 % )
 Total virtual pins : 0
-Total memory bits : 9,600 / 1,152,000 ( < 1 % )
+Total memory bits : 496,256 / 1,152,000 ( 43 % )
 Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )
 Total PLLs : 1 / 4 ( 25 % )

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for electraudio_modem
-Thu Feb 27 14:45:43 2014
+Fri Mar 21 13:21:05 2014
 Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Feb 27 14:45:43 2014 ;
+; EDA Netlist Writer Status ; Successful - Fri Mar 21 13:21:05 2014 ;
 ; Revision Name             ; electraudio_modem                     ;
 ; Top-level Entity Name     ; electraudio_modem                     ;
 ; Family                    ; Cyclone II                            ;
@@ -84,13 +84,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Feb 27 14:45:41 2014
+    Info: Processing started: Fri Mar 21 13:21:02 2014
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off electraudio_modem -c electraudio_modem
 Info (204026): Generated files "electraudio_modem.vho", "electraudio_modem_fast.vho", "electraudio_modem_vhd.sdo" and "electraudio_modem_vhd_fast.sdo" in directory "C:/Users/Mempf/repositories/ofdm/electraudio/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 443 megabytes
-    Info: Processing ended: Thu Feb 27 14:45:44 2014
+    Info: Peak virtual memory: 452 megabytes
+    Info: Processing ended: Fri Mar 21 13:21:05 2014
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

@@ -758,10 +758,10 @@ GND*                         : P1        :        :                   :         
 GND*                         : P2        :        :                   :         : 2         :                
 GND*                         : P3        :        :                   :         : 2         :                
 GND*                         : P4        :        :                   :         : 2         :                
-TCK                          : P5        : input  :                   :         : 2         :                
+altera_reserved_tck          : P5        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : P6        :        :                   :         : 2         :                
 GND*                         : P7        :        :                   :         : 2         :                
-TDI                          : P8        : input  :                   :         : 2         :                
+altera_reserved_tdi          : P8        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : P9        :        :                   :         : 2         :                
 GND                          : P10       : gnd    :                   :         :           :                
 VCCINT                       : P11       : power  :                   : 1.2V    :           :                
@@ -787,10 +787,10 @@ DAC_MODE                     : P30       : output : 3.3-V LVTTL       :         
 VCCIO2                       : R1        : power  :                   : 3.3V    : 2         :                
 GND+                         : R2        :        :                   :         : 2         :                
 GND+                         : R3        :        :                   :         : 2         :                
-TDO                          : R4        : output :                   :         : 2         :                
+altera_reserved_tdo          : R4        : output : 3.3-V LVTTL       :         : 2         : N              
 nCONFIG                      : R5        :        :                   :         : 2         :                
 nCE                          : R6        :        :                   :         : 2         :                
-TMS                          : R7        : input  :                   :         : 2         :                
+altera_reserved_tms          : R7        : input  : 3.3-V LVTTL       :         : 2         : N              
 DATA0                        : R8        : input  :                   :         : 2         :                
 DCLK                         : R9        :        :                   :         : 2         :                
 VCCIO2                       : R10       : power  :                   : 3.3V    : 2         :                
