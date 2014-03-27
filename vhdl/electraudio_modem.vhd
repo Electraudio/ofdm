@@ -28,24 +28,31 @@ architecture arch of electraudio_modem is
 	signal clk_10 : std_logic;
 	signal clk_100 : std_logic;
 	signal clk_50 : std_logic;
-	signal rst : std_logic;
+	signal clk_en : std_logic;
+	signal rst,rst_n : std_logic;
 	signal iserial : std_logic;
-	signal lucky_ramp_q : std_logic_vector(13 downto 0);
-	signal lucky_ramp_d : std_logic_vector(13 downto 0);
+	signal lucky_ramp_q : std_logic_vector(7 downto 0);
+	signal lucky_ramp_d : std_logic_vector(7 downto 0);
 	signal I_loop : std_logic_vector(13 downto 0);
+	signal phi : std_logic_vector(31 downto 0) := "00001100110011001100110011001101";
+	signal I_Tx,I_Rx : std_logic_vector(23 downto 0);
+	signal fsin_o : std_logic_vector(9 downto 0);
+	signal filter_out : std_logic_vector(32 downto 0);
 
 begin
 
-	lucky_ramp_d <= "00000000000000" when lucky_ramp_q >= "11111111111111"
+	clk_en <= '1';
+
+	lucky_ramp_d <= "00000000" when lucky_ramp_q >= "11111111"
 	else lucky_ramp_q + 1;
 	
 	lucky_ramp_q <= lucky_ramp_d when rising_edge(clk_100);
 	
-	DAC_DA <= lucky_ramp_q;-- & "0000000";
-	DAC_DB <= lucky_ramp_q;
+	DAC_DB <= not(I_Tx(23)) & I_Tx(22 downto 10);
 	--DAC_DA <= I_loop;
 	--DAC_DB <= I_loop;
 
+	rst_n <= KEY(0);
 	rst <= not(KEY(0));
 	iserial <= not(KEY(3));
 	
@@ -63,6 +70,42 @@ begin
 	POWER_ON <= '1';
 	DAC_MODE <= '1';
 
+FIR0 : entity work.Hlp
+    PORT MAP (
+              clk                              => clk_50,
+              clk_enable                       => clk_en,
+              reset                            => rst,
+              filter_in                        => not(I_Rx(23)) & I_Rx(22 downto 10),
+              filter_out                       => filter_out
+	);
+	
+	
+N0 : entity work.nco
+	PORT MAP (
+		phi_inc_i  =>  phi,
+		fsin_o  =>  fsin_o,
+--		fcos_o  =>  fcos_o,
+		clk  =>  clk_100,
+		reset_n  =>  rst_n,
+		clken  =>  clk_en
+--		out_valid  =>  out_valid
+	);
+	
+LPM0 : entity work.lpm PORT MAP (
+		dataa	 => lucky_ramp_q & "000000",
+	--   dataa	 => I_loop,
+		datab	 => fsin_o,
+		result	 => I_Tx
+	);
+	
+LPM1 : entity work.lpm PORT MAP (
+	dataa	 => ADC_DA,
+	datab	 => fsin_o,
+	result	 => I_Rx
+);
+	
+	
+	
 P0 : entity work.pll port map(
 		inclk0	 => iCLK_50,
 		areset => rst,
@@ -78,7 +121,7 @@ M0 : entity work.modem port map(
        Iout => I_loop,
 --       Qout => DAC_DB,
 --       Iin => I_loop(13 downto 2),
-	    Iin => ADC_DA(13 downto 2),
+	    Iin => I_Rx(23 downto 12),
        Qin => (others=>'0')--ADC_DB(13 downto 2)
 );
 

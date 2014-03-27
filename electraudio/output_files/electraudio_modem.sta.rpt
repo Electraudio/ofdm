@@ -1,6 +1,6 @@
 TimeQuest Timing Analyzer report for electraudio_modem
-Fri Mar 21 13:21:01 2014
-Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+Mon Mar 24 18:14:19 2014
+Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -75,15 +75,15 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-4 processors         ;   0.0%      ;
+;     2-8 processors         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -221,10 +221,10 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; iCLK_50    ; ADC_CLK_A   ; 1.460 ;    ;    ; 1.460 ;
 ; iCLK_50    ; ADC_CLK_B   ; 1.460 ;    ;    ; 1.460 ;
-; iCLK_50    ; DAC_CLK_A   ; 1.489 ;    ;    ; 1.489 ;
+; iCLK_50    ; DAC_CLK_A   ; 1.490 ;    ;    ; 1.490 ;
 ; iCLK_50    ; DAC_CLK_B   ; 0.057 ;    ;    ; 0.057 ;
-; iCLK_50    ; DAC_WRT_A   ; 1.316 ;    ;    ; 1.316 ;
-; iCLK_50    ; DAC_WRT_B   ; 1.299 ;    ;    ; 1.299 ;
+; iCLK_50    ; DAC_WRT_A   ; 1.317 ;    ;    ; 1.317 ;
+; iCLK_50    ; DAC_WRT_B   ; 1.300 ;    ;    ; 1.300 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -235,10 +235,10 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; iCLK_50    ; ADC_CLK_A   ; 1.460 ;    ;    ; 1.460 ;
 ; iCLK_50    ; ADC_CLK_B   ; 1.460 ;    ;    ; 1.460 ;
-; iCLK_50    ; DAC_CLK_A   ; 1.489 ;    ;    ; 1.489 ;
+; iCLK_50    ; DAC_CLK_A   ; 1.490 ;    ;    ; 1.490 ;
 ; iCLK_50    ; DAC_CLK_B   ; 0.057 ;    ;    ; 0.057 ;
-; iCLK_50    ; DAC_WRT_A   ; 1.316 ;    ;    ; 1.316 ;
-; iCLK_50    ; DAC_WRT_B   ; 1.299 ;    ;    ; 1.299 ;
+; iCLK_50    ; DAC_WRT_A   ; 1.317 ;    ;    ; 1.317 ;
+; iCLK_50    ; DAC_WRT_B   ; 1.300 ;    ;    ; 1.300 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -275,10 +275,10 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; iCLK_50    ; ADC_CLK_A   ; 1.460 ;    ;    ; 1.460 ;
 ; iCLK_50    ; ADC_CLK_B   ; 1.460 ;    ;    ; 1.460 ;
-; iCLK_50    ; DAC_CLK_A   ; 1.489 ;    ;    ; 1.489 ;
+; iCLK_50    ; DAC_CLK_A   ; 1.490 ;    ;    ; 1.490 ;
 ; iCLK_50    ; DAC_CLK_B   ; 0.057 ;    ;    ; 0.057 ;
-; iCLK_50    ; DAC_WRT_A   ; 1.316 ;    ;    ; 1.316 ;
-; iCLK_50    ; DAC_WRT_B   ; 1.299 ;    ;    ; 1.299 ;
+; iCLK_50    ; DAC_WRT_A   ; 1.317 ;    ;    ; 1.317 ;
+; iCLK_50    ; DAC_WRT_B   ; 1.300 ;    ;    ; 1.300 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -307,10 +307,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 1     ; 1    ;
-; Unconstrained Input Ports       ; 17    ; 17   ;
-; Unconstrained Input Port Paths  ; 229   ; 229  ;
-; Unconstrained Output Ports      ; 35    ; 35   ;
-; Unconstrained Output Port Paths ; 35    ; 35   ;
+; Unconstrained Input Ports       ; 16    ; 16   ;
+; Unconstrained Input Port Paths  ; 3824  ; 3824 ;
+; Unconstrained Output Ports      ; 21    ; 21   ;
+; Unconstrained Output Port Paths ; 238   ; 238  ;
 +---------------------------------+-------+------+
 
 
@@ -318,9 +318,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; TimeQuest Timing Analyzer Messages ;
 +------------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Mar 21 13:21:00 2014
+    Info: Processing started: Mon Mar 24 18:14:15 2014
 Info: Command: quartus_sta electraudio_modem -c electraudio_modem
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored assignments for entity "DE2_70_ADDA_GPIO" -- entity does not exist in design
@@ -347,10 +347,23 @@ Warning (20013): Ignored assignments for entity "DE2_70_ADDA_GPIO" -- entity doe
     Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity DE2_70_ADDA_GPIO -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE2_70_ADDA_GPIO -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE2_70_ADDA_GPIO -section_id Top was ignored
-Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (332164): Evaluating HDL-embedded SDC commands
+    Info (332165): Entity GHVD5181
+        Info (332166): set_disable_timing [get_cells -hierarchical QXXQ6833_0]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_0]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_1]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_2]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_3]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_4]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_5]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_6]
+        Info (332166): set_disable_timing [get_cells -hierarchical JEQQ5299_7]
+        Info (332166): set_disable_timing [get_cells -hierarchical BITP7563_0]
+    Info (332165): Entity pzdyqx_impl
+        Info (332166): set_false_path -from [get_keepers {altera_reserved_tdi}] -to [get_keepers {pzdyqx*}]
     Info (332165): Entity sld_jtag_hub
         Info (332166): create_clock -period 10MHz -name altera_reserved_tck [get_ports {altera_reserved_tck}]
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
@@ -389,10 +402,10 @@ Info (332146): Worst-case minimum pulse width slack is 97.778
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 35 warnings
-    Info: Peak virtual memory: 474 megabytes
-    Info: Processing ended: Fri Mar 21 13:21:01 2014
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 35 warnings
+    Info: Peak virtual memory: 519 megabytes
+    Info: Processing ended: Mon Mar 24 18:14:19 2014
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 

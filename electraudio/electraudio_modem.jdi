@@ -1,10 +1,11 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="125d9c16c732c8755e1d"/>
+    <hash md5_digest_80b="8295ab8e97d24baa9b78"/>
   </project>
   <file_info/>
-  <hub_info ir_width="8" node_count="1"/>
+  <hub_info ir_width="8" node_count="2"/>
   <node_info>
+    <node hpath="pzdyqx:nabboc" instance_id="0" mfg_id="110" node_id="1" sld_node_info="0x86E00" version="0"/>
     <node hpath="sld_signaltap:auto_signaltap_0" instance_id="0" mfg_id="110" node_id="0" sld_node_info="0x30006E00" version="6">
       <parameters>
         <parameter name="lpm_type" type="string" value="sld_signaltap"/>
@@ -12,11 +13,11 @@
         <parameter name="SLD_IP_VERSION" type="dec" value="6"/>
         <parameter name="SLD_IP_MINOR_VERSION" type="dec" value="0"/>
         <parameter name="SLD_COMMON_IP_VERSION" type="dec" value="0"/>
-        <parameter name="sld_data_bits" type="unknown" value="30"/>
-        <parameter name="sld_trigger_bits" type="unknown" value="30"/>
+        <parameter name="sld_data_bits" type="unknown" value="47"/>
+        <parameter name="sld_trigger_bits" type="unknown" value="47"/>
         <parameter name="SLD_NODE_CRC_BITS" type="dec" value="32"/>
-        <parameter name="sld_node_crc_hiword" type="unknown" value="56192"/>
-        <parameter name="sld_node_crc_loword" type="unknown" value="24545"/>
+        <parameter name="sld_node_crc_hiword" type="unknown" value="59600"/>
+        <parameter name="sld_node_crc_loword" type="unknown" value="5476"/>
         <parameter name="SLD_INCREMENTAL_ROUTING" type="dec" value="0"/>
         <parameter name="sld_sample_depth" type="unknown" value="16384"/>
         <parameter name="sld_segment_size" type="unknown" value="16384"/>
@@ -40,8 +41,8 @@
         <parameter name="SLD_ADVANCED_TRIGGER_8" type="string" value="NONE"/>
         <parameter name="SLD_ADVANCED_TRIGGER_9" type="string" value="NONE"/>
         <parameter name="SLD_ADVANCED_TRIGGER_10" type="string" value="NONE"/>
-        <parameter name="sld_inversion_mask_length" type="unknown" value="118"/>
-        <parameter name="sld_inversion_mask" type="unknown" value="0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/>
+        <parameter name="sld_inversion_mask_length" type="unknown" value="169"/>
+        <parameter name="sld_inversion_mask" type="unknown" value="0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/>
         <parameter name="sld_power_up_trigger" type="unknown" value="0"/>
         <parameter name="SLD_STATE_FLOW_MGR_ENTITY" type="string" value="state_flow_mgr_entity.vhd"/>
         <parameter name="sld_state_flow_use_generated" type="unknown" value="0"/>

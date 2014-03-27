@@ -1,6 +1,6 @@
 EDA Netlist Writer report for electraudio_modem
-Fri Mar 21 13:21:05 2014
-Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+Sun Mar 23 21:34:59 2014
+Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -8,9 +8,7 @@ Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Editio
 ---------------------
   1. Legal Notice
   2. EDA Netlist Writer Summary
-  3. Simulation Settings
-  4. Simulation Generated Files
-  5. EDA Netlist Writer Messages
+  3. EDA Netlist Writer Messages
 
 
 
@@ -33,64 +31,100 @@ applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------+
-; EDA Netlist Writer Summary                                        ;
-+---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Mar 21 13:21:05 2014 ;
-; Revision Name             ; electraudio_modem                     ;
-; Top-level Entity Name     ; electraudio_modem                     ;
-; Family                    ; Cyclone II                            ;
-; Simulation Files Creation ; Successful                            ;
-+---------------------------+---------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                        ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Option                                                                                            ; Setting                ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Tool Name                                                                                         ; ModelSim-Altera (VHDL) ;
-; Generate netlist for functional simulation only                                                   ; Off                    ;
-; Time scale                                                                                        ; 1 ps                   ;
-; Truncate long hierarchy paths                                                                     ; Off                    ;
-; Map illegal HDL characters                                                                        ; Off                    ;
-; Flatten buses into individual nodes                                                               ; Off                    ;
-; Maintain hierarchy                                                                                ; Off                    ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                    ;
-; Enable glitch filtering                                                                           ; Off                    ;
-; Do not write top level VHDL entity                                                                ; Off                    ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                    ;
-; Architecture name in VHDL output netlist                                                          ; structure              ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                    ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                    ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-
-
-+-------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                      ;
-+-------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                 ;
-+-------------------------------------------------------------------------------------------------+
-; C:/Users/Mempf/repositories/ofdm/electraudio/simulation/modelsim/electraudio_modem.vho          ;
-; C:/Users/Mempf/repositories/ofdm/electraudio/simulation/modelsim/electraudio_modem_fast.vho     ;
-; C:/Users/Mempf/repositories/ofdm/electraudio/simulation/modelsim/electraudio_modem_vhd.sdo      ;
-; C:/Users/Mempf/repositories/ofdm/electraudio/simulation/modelsim/electraudio_modem_vhd_fast.sdo ;
-+-------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+
+; EDA Netlist Writer Summary                                    ;
++---------------------------+-----------------------------------+
+; EDA Netlist Writer Status ; Failed - Sun Mar 23 21:34:59 2014 ;
+; Revision Name             ; electraudio_modem                 ;
+; Top-level Entity Name     ; electraudio_modem                 ;
+; Family                    ; Cyclone II                        ;
++---------------------------+-----------------------------------+
 
 
 +-----------------------------+
 ; EDA Netlist Writer Messages ;
 +-----------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit EDA Netlist Writer
+Info: Running Quartus II 32-bit EDA Netlist Writer
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Mar 21 13:21:02 2014
+    Info: Processing started: Sun Mar 23 21:34:58 2014
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off electraudio_modem -c electraudio_modem
-Info (204026): Generated files "electraudio_modem.vho", "electraudio_modem_fast.vho", "electraudio_modem_vhd.sdo" and "electraudio_modem_vhd_fast.sdo" in directory "C:/Users/Mempf/repositories/ofdm/electraudio/simulation/modelsim/" for EDA simulation tool
-Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 452 megabytes
-    Info: Processing ended: Fri Mar 21 13:21:05 2014
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_mob_w.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_as_m_dp_cen.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_madx_cen.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_dxx_g.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_as_m_cen.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_apr_dxx.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_altqmcpipe.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_derot.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_dxx.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_isdr.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_gam_dp.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_mady_cen.v" is an OpenCore Plus time-limited file
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_mob_w.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_as_m_dp_cen.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_madx_cen.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_dxx_g.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_as_m_cen.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_apr_dxx.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_altqmcpipe.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_derot.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_dxx.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_isdr.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_gam_dp.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_mady_cen.v" is not available
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_mob_w.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_as_m_dp_cen.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_madx_cen.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_dxx_g.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_as_m_cen.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_apr_dxx.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_altqmcpipe.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_derot.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_dxx.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_isdr.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_gam_dp.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_mady_cen.v" is an OpenCore Plus time-limited file
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_mob_w.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_as_m_dp_cen.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_madx_cen.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_dxx_g.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_as_m_cen.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_apr_dxx.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_altqmcpipe.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_derot.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_dxx.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_isdr.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_gam_dp.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_mady_cen.v" is not available
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_mob_w.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_as_m_dp_cen.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_madx_cen.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_dxx_g.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_as_m_cen.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_apr_dxx.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_altqmcpipe.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_derot.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_dxx.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_isdr.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_gam_dp.v" is an OpenCore Plus time-limited file
+Error (204012): Can't generate netlist output files because the file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_mady_cen.v" is an OpenCore Plus time-limited file
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_mob_w.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_as_m_dp_cen.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_madx_cen.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_dxx_g.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_as_m_cen.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_apr_dxx.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_altqmcpipe.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_derot.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_dxx.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_isdr.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_gam_dp.v" is not available
+Error (204009): Can't generate netlist output files because the license for encrypted file "d:/Users/Mempf/repositories/ofdm/electraudio/nco-library/asj_nco_mady_cen.v" is not available
+Error: Quartus II 32-bit EDA Netlist Writer was unsuccessful. 72 errors, 0 warnings
+    Error: Peak virtual memory: 353 megabytes
+    Error: Processing ended: Sun Mar 23 21:34:59 2014
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:01
 
 
